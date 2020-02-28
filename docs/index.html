@@ -5,8 +5,8 @@ title: osnapi
 keywords: fastai
 sidebar: home_sidebar
 
-summary: "Summary description here."
-description: "Summary description here."
+summary: "Unofficial opensense.network API  "
+description: "Unofficial opensense.network API  "
 ---
 <!--
 
@@ -26,8 +26,21 @@ description: "Summary description here."
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The official documentation can be found here: <a href="https://www.opensense.network/progprak/beta/apidocs/#/">https://www.opensense.network/progprak/beta/apidocs/#/</a> 
-This file will become your README and also the index of your documentation.</p>
+<p>If you want to submit data yourself, you can get in touch at <a href="https://opensense.network/">https://opensense.network/</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The official documentation can be found here: <a href="https://www.opensense.network/progprak/beta/apidocs/#/">https://www.opensense.network/progprak/beta/apidocs/#/</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The docs for this Project are available at: (insert link here)</p>
 
 </div>
 </div>
@@ -40,8 +53,20 @@ This file will become your README and also the index of your documentation.</p>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Put this whole folder in your project, and then do <code>import osnapi as api</code>.<br>
-<code>pip install your_project_name</code></p>
+<p>To use this module in your project, you have multiple options. The easiest is to install it using the <code>pip</code> packetmanager:</p>
+
+<pre><code>pip install osnapi
+
+</code></pre>
+<p>You can also clone this repo and create an editable install, in case you want to customize the api's behaviour:</p>
+
+<pre><code>git clone &lt;this repo&gt;
+cd &lt;this repo&gt;
+pip install -e .
+
+</code></pre>
+<p>This module uses <a href="https://github.com/fastai/nbdev">nbdev</a>, a jupyter notebook based environment. If you go for the editable install, we recommend you to take a short look at nbdev first.</p>
+<p>If you want a lightweight portable module, you can also just copy the <strong>osnapi</strong> folder into your project. No installation necessary.</p>
 
 </div>
 </div>
@@ -54,18 +79,33 @@ This file will become your README and also the index of your documentation.</p>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>if you want to use functions that require a login, use <code>api.login(username, password)</code>.
-After successfully logging in, the username and password you used, as well as the token that was returned by the server, are stored inside the <a href="/osnapi/core#Settings"><code>Settings</code></a> object.<br>
-The default api_enpoint is "<a href="https://dep2.osn.k8s.ise-apps.de/api/v1.0">https://dep2.osn.k8s.ise-apps.de/api/v1.0</a>". It is also stored inside the <a href="/osnapi/core#Settings"><code>Settings</code></a> object.<br>
-Except for the api_endpoint, the other three Settings are not defined when you import the package.</p>
+<p>Once you have installed this module using any of the methods above, you can use</p>
+
+<pre><code>import osnapi as api
+
+</code></pre>
+<p>and start coding.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>first pass on readme</p>
-</blockquote>
+<p>If you want to use functions that require a login, use:</p>
+
+<pre><code>api.login(username, password)
+
+</code></pre>
+<p>After successfully logging in, the username and password you used, as well as the token that was returned by the server, are stored inside the <a href="/osnapi/core#Settings"><code>Settings</code></a> object.<br>
+The default api_enpoint is "<a href="https://dep2.osn.k8s.ise-apps.de/api/v1.0">https://dep2.osn.k8s.ise-apps.de/api/v1.0</a>". It is also stored inside the <a href="/osnapi/core#Settings"><code>Settings</code></a> object.<br>
+Except for the api_endpoint, the Settings are not defined when you import the package, and are not persisted when you reload.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For an overview and documentation of the available functionality, check out the links at the top of this README</p>
 
 </div>
 </div>
