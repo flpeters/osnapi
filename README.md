@@ -14,7 +14,7 @@ To use this module in your project, you have multiple options. The easiest is to
 
     pip install osnapi
     
-You can also clone this repo and create an editable install, in case you want to customize the api's behaviour:
+You can also clone this repo and create an editable install, in case you want to customize e.g. the error messages behaviour:
 
     git clone <this repo>
     cd <this repo>
@@ -36,8 +36,13 @@ If you want to use functions that require a login, use:
 
     api.login(username, password)
     
-After successfully logging in, the username and password you used, as well as the token that was returned by the server, are stored inside the `Settings` object.  
-The default api_enpoint is "https://dep2.osn.k8s.ise-apps.de/api/v1.0". It is also stored inside the `Settings` object.  
-Except for the api_endpoint, the Settings are not defined when you import the package, and are not persisted when you reload.
+The default api_enpoint is https://www.opensense.network/beta/api/v1.0/. It is also stored inside the `Settings` object.
+
+To change the `api_endpoint`, `username`, `password`, or `auth_token` manually, simply assign to the Settings objects class variables e.g. `api.Settings.username = 'Alice'`. It's important that you do not use an instance of Settings, but the class directly, because instanced changes will not be seen by the module.  
+To view your current settings, you can instantiate a Settings object with `api.Settings()`. Its string representation will display the current settings.  
+Except for the api_endpoint, the Settings are not defined when you import the package, and are not persisted when you reload. They are however automatically added when you use `api.login()`.
+
+The authentication tokens you get from the server are JSON Web Tokens.  
+A Token is valid for one hour, but will automatically be reaquired using the credentials saved in Settings, once it runs out.
 
 For an overview and documentation of the available functionality, check out the links at the top of this README

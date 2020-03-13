@@ -47,7 +47,7 @@ description: "Unofficial opensense.network API  "
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Install">Install<a class="anchor-link" href="#Install">&#182;</a></h2>
+<h2 id="Install">Install<a class="anchor-link" href="#Install"> </a></h2>
 </div>
 </div>
 </div>
@@ -58,7 +58,7 @@ description: "Unofficial opensense.network API  "
 <pre><code>pip install osnapi
 
 </code></pre>
-<p>You can also clone this repo and create an editable install, in case you want to customize the api's behaviour:</p>
+<p>You can also clone this repo and create an editable install, in case you want to customize e.g. the error messages behaviour:</p>
 
 <pre><code>git clone &lt;this repo&gt;
 cd &lt;this repo&gt;
@@ -73,7 +73,7 @@ pip install -e .
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="How-to-use">How to use<a class="anchor-link" href="#How-to-use">&#182;</a></h2>
+<h2 id="How-to-use">How to use<a class="anchor-link" href="#How-to-use"> </a></h2>
 </div>
 </div>
 </div>
@@ -96,9 +96,24 @@ pip install -e .
 <pre><code>api.login(username, password)
 
 </code></pre>
-<p>After successfully logging in, the username and password you used, as well as the token that was returned by the server, are stored inside the <a href="/osnapi/core#Settings"><code>Settings</code></a> object.<br>
-The default api_enpoint is "<a href="https://dep2.osn.k8s.ise-apps.de/api/v1.0">https://dep2.osn.k8s.ise-apps.de/api/v1.0</a>". It is also stored inside the <a href="/osnapi/core#Settings"><code>Settings</code></a> object.<br>
-Except for the api_endpoint, the Settings are not defined when you import the package, and are not persisted when you reload.</p>
+<p>The default api_enpoint is <a href="https://www.opensense.network/beta/api/v1.0/">https://www.opensense.network/beta/api/v1.0/</a>. It is also stored inside the <a href="/osnapi/core#Settings"><code>Settings</code></a> object.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To change the <code>api_endpoint</code>, <code>username</code>, <code>password</code>, or <code>auth_token</code> manually, simply assign to the Settings objects class variables e.g. <code>api.Settings.username = 'Alice'</code>. It's important that you do not use an instance of Settings, but the class directly, because instanced changes will not be seen by the module.<br>
+To view your current settings, you can instantiate a Settings object with <code>api.Settings()</code>. Its string representation will display the current settings.<br>
+Except for the api_endpoint, the Settings are not defined when you import the package, and are not persisted when you reload. They are however automatically added when you use <code>api.login()</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The authentication tokens you get from the server are JSON Web Tokens.<br>
+A Token is valid for one hour, but will automatically be reaquired using the credentials saved in Settings, once it runs out.</p>
 
 </div>
 </div>
