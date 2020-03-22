@@ -25,7 +25,7 @@ class Settings():
     def __repr__(self):
         return f'api_endpoint:\t{self.api_endpoint}\nusername:\t{self.username}\npassword:\t{self.password}\nauth_token:\t{self.auth_token}'
 
-# Internal Cell
+# Cell
 #######################################
 #               HELPERS               #
 #######################################

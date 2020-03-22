@@ -8,6 +8,9 @@ The official documentation can be found here: https://www.opensense.network/prog
 
 The docs for this Project are available at: (insert link here)
 
+An example of a project using this api is: https://github.com/flamestro/serverless_opensense_dwd_importer  
+In that project we implement a data importer that downloads data from https://www.dwd.de/ and pushes that data to opensense.
+
 ## Install
 
 To use this module in your project, you have multiple options. The easiest is to install it using the `pip` packetmanager:
