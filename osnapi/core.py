@@ -72,28 +72,19 @@ def handle_response(query:str, response:requests.Response) -> Union[Dict, str]:
     """
     try:    text = response.json()
     except: text = response.text
-    if response.status_code == 200:
-        return text
+    if response.status_code == 200: return text
 
-    elif response.status_code == 500 or response.status_code == 401:
-        info = f'The Server has refused this request, due to you attempting something that requires authorization. Try logging in and repeating the Request.\
-            \n--Status Code   : {response.status_code}\
-            \n--Request to    : {query}\
-            \n--Response Body : {text}'
-        raise PermissionError(info)
+    info = f'\n--Status Code   : {response.status_code}\n--Request to    : {query}\n--Response Body : {text}'
 
-    elif response.status_code == 408:
-        info = f'The Server has closed this connection, probably due to the request being too large, or the server being under heavy load. Try sending less data at once.\
-            \n--Status Code   : {response.status_code}\
-            \n--Request to    : {query}\
-            \n--Response Body : {text}'
-        raise Exception(info)
-    else:
-        info = f'Something went wrong with your request.\
-            \n--Status Code   : {response.status_code}\
-            \n--Request to    : {query}\
-            \n--Response Body : {text}'
-        raise Exception(info)
+    if response.status_code == 500 or response.status_code == 401:
+        raise PermissionError(f'The Server has refused this request, due to you attempting something that requires authorization.\
+        Try logging in and repeating the Request.{info}')
+
+    if response.status_code == 408:
+        raise Exception(f'The Server has closed this connection, probably due to the request being too large,\
+        or the server being under heavy load. Try sending less data at once.{info}')
+
+    raise Exception(f'Something went wrong with your request.{info}')
 
 # Internal Cell
 def _try_login(_):
@@ -155,11 +146,11 @@ def login(username:str, password:str) -> str:
             {'id': '...'}
     """
     query = build_query(target='/users/login')
-    body = {"username": username, "password": password}
-    response = send_post(query, body)
+    body = {'username': username, 'password': password}
+    token = send_post(query, body)['id']
     Settings.username, Settings.password = username, password
-    Settings.auth_token = response['id']
-    return response['id']
+    Settings.auth_token = token
+    return token
 
 # Cell
 #######################################
