@@ -34,8 +34,8 @@ class Settings():
 def retry_on(EX:Exception, retries:int=1, on_failure:Callable=None):
     """Decorator that retries the decorated function n (retries) times,
        calling on_failure each time it fails with a given Exception EX.
-       EX can be a single, or a tuple of Exception/s that should be caught.
-       on_failure takes the Exception that cause the failure,
+       EX can be one, or a tuple of Exception/s that should be caught.
+       on_failure takes the Exception that caused the failure,
        and returns a boolean saying whether or not to try again."""
     assert retries >= 0, 'can\'t have negative retries'
     if on_failure is None: on_failure = lambda e: True
