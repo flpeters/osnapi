@@ -6,10 +6,14 @@ If you want to submit data yourself, you can get in touch at https://opensense.n
 
 The official documentation can be found here: https://www.opensense.network/progprak/beta/apidocs/#/  
 
-The docs for this Project are available at: (insert link here)
+The docs for this Project are available at: https://flpeters.github.io/osnapi/
 
 An example of a project using this api is: https://github.com/flamestro/serverless_opensense_dwd_importer  
 In that project we implement a data importer that downloads data from https://www.dwd.de/ and pushes that data to opensense.
+
+## What is https://opensense.network/?
+
+OpenSense is "A participatory open sensor data platform", making a uniform data format for a variety of open source weather data sources available to the public.
 
 ## Install
 

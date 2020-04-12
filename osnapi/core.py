@@ -31,7 +31,7 @@ class Settings():
 #######################################
 
 # Cell
-def retry_on(EX:Exception, retries:int=1, on_failure:Callable=None):
+def retry_on(EX:Exception, retries:int=1, on_failure:Callable=None): # TODO(florian): test that on_failure returns a boolean?
     """Decorator that retries the decorated function n (retries) times,
        calling on_failure each time it fails with a given Exception EX.
        EX can be one, or a tuple of Exception/s that should be caught.
@@ -45,7 +45,7 @@ def retry_on(EX:Exception, retries:int=1, on_failure:Callable=None):
             while (retry and (_tries > 0)):
                 retry, _tries = False, _tries - 1
                 try: return func(*args, **kwargs)
-                except EX as e: _e, retry = e, on_failure(e)
+                except EX as e: _e, retry = e, on_failure(e) # TODO(florian): also pass the repeat count / args / kwargs?
             else: raise _e
         return _wrapper
     return _retry_on
