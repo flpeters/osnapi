@@ -1,6 +1,6 @@
 {
   "osnapi": {
     "Overview": "/",
-    "Core": "/core"
+    "Imports": "core.html"
   }
 }

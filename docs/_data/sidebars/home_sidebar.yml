@@ -10,8 +10,8 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
-      title: Core
-      url: /core
+      title: Imports
+      url: core.html
     output: web
     title: osnapi
   output: web
