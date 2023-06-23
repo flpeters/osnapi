@@ -1,7 +1,6 @@
 # OpenSense API
 > The Unofficial opensense.network API  
 
-[osnapi documentation](https://flpeters.github.io/osnapi/)  
 [official documentation](https://www.opensense.network/beta/apidocs/)
 
 ## What is https://opensense.network/?
