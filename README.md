@@ -1,12 +1,16 @@
 # OpenSense API
 > The Unofficial opensense.network API  
 
-[official documentation](https://www.opensense.network/beta/apidocs/)
+[official documentation](https://opensense.infra.ise-apps.de/)
 
-## What is https://opensense.network/?
+# NOTICE:
+> It seems like this service has been discontinued, or at least is no longer being maintained. The web address has changed since the time when this unofficial project was developed, and the api documentation can't be reached as far as I can tell.  
+> Maybe it will be revived some time in the future, but for now I'll just leave this project here for reference.
+
+## What is OpenSense?
 
 OpenSense is "A participatory open sensor data platform", making a uniform data format for a variety of open source weather data sources available to the public.  
-For more information, visit [the website](https://opensense.network/).
+For more information, visit [the website](https://opensense.infra.ise-apps.de/).
 
 ## Install
 
